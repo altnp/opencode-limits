@@ -12,9 +12,11 @@
 ```bash
 git clone https://github.com/altnp/opencode-limits.git
 cd opencode-limits
-uv venv
-uv pip install -e .
+uv tool install -e .
+uv tool update-shell
 ```
+
+Restart your shell, then run `opencode-limits`.
 
 If you prefer `pip`:
 
