@@ -1,0 +1,24 @@
+[project]
+name = "opencode-limits"
+version = "0.1.0"
+description = "CLI for OpenCode usage limits"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.25",
+    "pytest>=7.4",
+    "rich>=13.7",
+]
+
+[project.scripts]
+opencode-limits = "opencode_limits.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opencode_limits"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
