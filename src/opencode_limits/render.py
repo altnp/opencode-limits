@@ -37,7 +37,7 @@ def render_sections(
                 line = Text(f"{label_text} ")
                 line.append(bar)
                 line.append(" ")
-                line.append(Text(percent_text, style=_usage_style(percent)))
+                line.append(Text(percent_text, style=usage_style(percent)))
                 if usage_width:
                     line.append(" ")
                     line.append(usage_text)
@@ -70,14 +70,14 @@ def _bar_text(percent: float, width: int = 28) -> Text:
     filled = max(0, min(width, filled))
     text = Text("[")
     if filled:
-        text.append("#" * filled, style=_usage_style(percent))
+        text.append("#" * filled, style=usage_style(percent))
     if width - filled:
         text.append("-" * (width - filled), style="bright_black")
     text.append("]")
     return text
 
 
-def _usage_style(percent: float) -> str:
+def usage_style(percent: float) -> str:
     if percent >= 99:
         return "red"
     if percent > 80:

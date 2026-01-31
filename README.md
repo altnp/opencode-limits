@@ -32,6 +32,12 @@ pip install -e .
 opencode-limits
 ```
 
+Tmux status line:
+
+```text
+set -g status-right "#(opencode-limits --tmux)"
+```
+
 The CLI reads `~/.local/share/opencode/auth.json` with keys:
 
 - `openai.access`
